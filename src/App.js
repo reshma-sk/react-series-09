@@ -11,9 +11,10 @@ import Cart from './components/Cart';
 import UserContext from './utils/UserContext';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
+import Body from './components/Body';
 
 
-const Body = lazy(()=>import('./components/Body'));
+
 const About = lazy(()=>import('./components/About'))
 
 const App = ()=>{
@@ -21,7 +22,7 @@ const App = ()=>{
 
     useEffect(()=>{
         const data = {
-            name:'Reshma Shaik',
+            name:'R',
         }
         setUserName(data.name)
     },[])

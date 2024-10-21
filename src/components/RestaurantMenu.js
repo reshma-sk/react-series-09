@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CDN_URL } from "../utils/constants";
 import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
+import { Shimmer } from './Shimmer';
 import { MdStarRate } from "react-icons/md";
 import useRestaurantMenuData from "../hooks/useRestaurantMenuData";
 import RestaurantMenuCategory from "./RestaurantMenuCategory";
@@ -17,15 +17,15 @@ const RestaurantMenu = ()=>{
     if(restaurantInfo === null){
         return <Shimmer/>
     }
-    //console.log(restaurantInfo?.data?.cards[2]?.card?.card?.info);
-    
-    const{name,cuisines,costForTwo,cloudinaryImageId,locality,avgRatingString,sla} = restaurantInfo?.data?.cards[2]?.card?.card?.info;  
+
+    const{name} = restaurantInfo?.data?.cards[2]?.card?.card?.info;  
     //const {itemCards} = restaurantInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
     //console.log(itemCards);
-    console.log(restaurantInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+    //console.log(restaurantInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
     const categories = restaurantInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter
     (c=>c.card?.["card"]?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
     console.log(categories);
+    
     return(
       <div className="w-[60%] m-auto">
         <h3 className="text-center font-bold">{name}  Menu</h3>

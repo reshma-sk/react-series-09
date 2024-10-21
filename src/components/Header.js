@@ -7,7 +7,7 @@ import UserContext from '../utils/UserContext';
 import { useSelector } from 'react-redux';
 
 const Header = ()=>{
-    const[isLoggedIn,setIsLoggedIn] = useState(false)
+    const[isLoggedIn,setIsLoggedIn] = useState(true)
     const isOnline = useOnline();
     const navigate = useNavigate();
     const {loggedInUser} = useContext(UserContext);
@@ -19,22 +19,23 @@ const Header = ()=>{
             <div>
                 <Link to="/"><img className='p-4 w-20' src={LOGO_URL} alt="Logo_img" /></Link>   
             </div>
-            <div>{isOnline ? "✅ Online" : "❌ Disconnected"}</div>
+            {/*<div>{isOnline ? "✅ Online" : "❌ Disconnected"}</div>*/}
             <div className="p-4">
                 <ul className='flex font-bold'>
                     <li className='m-3 hover:bg-orange-300'><Link to="/">Home</Link></li>
                     <li className='m-3 hover:bg-orange-300'><Link to="/About">About</Link></li>
                     <li className='m-3 hover:bg-orange-300'><Link to="/contact">Contact Us</Link></li>
-                    <li>
-                        <Link to="/cart" className='m-3 hover:bg-orange-300'><FaCartArrowDown/>{cartItems.length}</Link>
-                        
-                    </li>  
-                    {isLoggedIn ? (
-                        <button  className='m-3 hover:bg-orange-300' onClick={()=>setIsLoggedIn(false)}>Logout</button>
+                    <li className='m-3 hover:bg-orange-300'>
+                        <Link to="/cart" >Cart({cartItems.length})</Link>    
+                    </li> 
+                    {isLoggedIn ?(
+                        <li className='m-3 hover:bg-orange-300' onClick={()=>setIsLoggedIn(false)}><Link to="/login">Login</Link>
+                    </li>
                     ):(
-                        <button  className='m-3 hover:bg-orange-300' onClick={()=>navigate("/login")}>Login</button>
-                    )} 
-                    <li className='m-3 hover:bg-orange-300'>{loggedInUser}</li>
+                        <li className='m-3 hover:bg-orange-300' onClick={()=>setIsLoggedIn(true)}>Logout</li>
+
+                    ) } 
+                    {/*<li className='m-3 hover:bg-orange-300'>{loggedInUser}</li>*/}
 
                 </ul>
             </div>

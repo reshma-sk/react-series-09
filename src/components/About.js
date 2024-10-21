@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import "../styles/About.css";
 import ProfileClass from "./ProfileClass";
 import { BURGER_IMG, LOGO_URL } from "../utils/constants";
 import { LOGO_URL } from "../utils/constants";
@@ -8,23 +7,13 @@ const About = () => {
   const [showProfile, setShowProfile] = useState(false);
 
   return (
-    <div className="about-container">
-      {/*<div className="show-profile">
-        {
-          <button className="user-btn" onClick={() => setShowProfile(!showProfile)}>
-            {showProfile ? "Hide My Profile" : "Show My Profile"}
-          </button>
-        }
-        {showProfile && <Profile name={"Reshma Shaik"} location={"Ireland"} />}
-      </div>*/}
-
-      <div className="about">
-        <div className="about-left">
-          <h1>
+      <div className="flex justify-around items-center">
+        <div className="flex flex-col">
+          <h1 className="font-bold text-3xl text-gray-500 m-1">
             Welcome to  The world of <br />{" "}
-            <span>Spoons & Forks </span>
+            <span className="bg-orange-400 rounded-md text-black m-4">Spoons & Forks </span>
           </h1>
-          <h4>
+          <h4 className="text-lg m-1">
             "Better you will feel if you eat at  <span>Spoons & Forks</span>,a healthy
             meal"
           </h4>
@@ -33,7 +22,7 @@ const About = () => {
           <img src={LOGO_URL} alt="Food Image" />
         </div>
       </div>
-    </div>
+  
   );
 };
 

@@ -1,7 +1,7 @@
 import { Formik } from "formik"; // import Formik from formik
 import * as Yup from "yup"; // import Yup from yup
 import { useNavigate } from "react-router-dom";
-import "../styles/Login.css";
+//import "../styles/Login.css";
 
 // create a schema for validation
 const schema = Yup.object().shape({
@@ -43,11 +43,13 @@ const Login = () => {
           handleBlur,
           handleSubmit,
         }) => (
-          <div className="login-container">
-            <div className="login-form">
+          <div className="flex justify-center items-center h-[100vh] w-full">
+            <div className="relative z-10 bg-[#c6c1bd] rounded-[10px] max-w-[380px] px-[40px] py-[25px] w-[50%]">
               {/* Passing handleSubmit parameter to html form onSubmit property */}
               <form noValidate onSubmit={handleSubmit}>
-                <span>Login</span>
+                <span className="text-[40px] text-[#4b6cb7] mb-[25px] block text-center font-[500px]">
+                  Login
+                </span>
                 {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
                 <input
                   type="email"
@@ -56,11 +58,10 @@ const Login = () => {
                   onBlur={handleBlur}
                   value={values.email}
                   placeholder="Enter your email"
-                  className="form-control inp_text"
-                  id="email"
+                  className="outline-none bg-[#514f4f] w-full border-0 rounded-[5px] m-0 mb-[15px] p-[15px] text-[14px] "
                 />
                 {/* If validation is not passed show errors */}
-                <p className="error">
+                <p className="mt-0 mr-0 mb-[10px] ml-[10px] text-left text-[13px] text-[red]">
                   {errors.email && touched.email && errors.email}
                 </p>
                 {/* input with passing formik parameters like handleChange, values, handleBlur to input properties */}
@@ -71,14 +72,20 @@ const Login = () => {
                   onBlur={handleBlur}
                   value={values.password}
                   placeholder="Enter your password"
-                  className="form-control"
+                  className="outline-none bg-[#514f4f] w-full border-0 rounded-[5px] m-0 mb-[15px] p-[15px] text-[14px] focus:border-[blue-500]"
                 />
                 {/* If validation is not passed show errors */}
-                <p className="error">
+                <p className="mt-0 mr-0 mb-[10px] ml-[10px] text-left text-[13px] text-[red]">
                   {errors.password && touched.password && errors.password}
                 </p>
                 {/* Click on submit button to submit the form */}
-                <button type="submit">Login</button>
+                <button
+                  className="uppercase outline-none bg-[#514f4f] text-[#FFF] text-[16px] cursor-pointer w-full 
+                  border-0 rounded-md py-[15px] px-[40px] active:bg-[#395591] hover:bg-[#5c5c6d] transition-all 0.3s ease-in-out"
+                  type="submit"
+                >
+                  Login
+                </button>
               </form>
             </div>
           </div>

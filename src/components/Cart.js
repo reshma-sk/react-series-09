@@ -11,13 +11,11 @@ const Cart = ()=>{
 
     }
     return(
-        <div className="text-center m-4 p-4">
+        <div className="w-8/12 flex flex-col justify-center items-center m-auto">
             <h1 className="text-2xl font-bold">Cart</h1>
-            <div className="w-6/12 m-auto">
-            <button className="text-white bg-black p-2 rounded-lg" onClick={handleClearCart}>Clear Cart</button>
             {cartItems.length == 0 && <h1>Cart is empty, add items</h1>}
                 <RItemList items={cartItems}/>
-            </div>
+            
             
         </div>
     )

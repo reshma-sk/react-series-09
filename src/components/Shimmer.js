@@ -1,16 +1,26 @@
-import { CiSearch } from "react-icons/ci";
-const Shimmer = ()=>{
-    return(
-        <div className='flex flex-col gap-8 justify-between items-center mt-3'>
-            <div className='flex justify-between items-center'>
-                <div className='flex border border-black'>
-                    <input type="text"  className='w-50 h-auto' placeholder='search'/>   
-                    <CiSearch/>
-                </div>
-                <div className='flex border border-black'></div>
-            </div>
-        </div>
-    )
+export const Shimmer = () => {
+  return (
+    <div className="w-[90%] flex flex-col items-center transition-all">
+      <div className="w-[50%] h-[50px] bg-[#cecccc] rounded-lg mb-[30px]"></div>
+      <div className="flex flex-wrap justify-center items-center gap-x-[1.5%] gap-y-[25px]">
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+        <div className="w-[250px] h-[300px] bg-[#cecccc] rounded-[8px]"></div>
+      </div>
+    </div>
+  );
+};
 
-}
-export default Shimmer;
