@@ -9,4 +9,4 @@ export const ERR_IMG = "https://d33v4339jhl8k0.cloudfront.net/docs/assets/5dd511
 export const GITHUB_USER_API = "https://api.github.com/users/"
 export const GITHUB_USER_NAME = "reshma-sk";
 export const GITHUB_LINK = "https://github.com/reshma-sk";
-export const SWIGGY_API_URL="https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.2472528&lng=80.1514447&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+export const SWIGGY_API_URL="https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.2472528&lng=80.1514447&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
