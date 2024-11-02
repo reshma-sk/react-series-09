@@ -20,9 +20,7 @@ const useOnline = ()=>{
     },[])
 
     return(
-        <div>
-          {isOnline}
-        </div>
+        isOnline
     )
 }
 export default useOnline;

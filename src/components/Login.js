@@ -1,98 +1,163 @@
-import { Formik } from "formik"; // import Formik from formik
-import * as Yup from "yup"; // import Yup from yup
-import { useNavigate } from "react-router-dom";
-//import "../styles/Login.css";
+import React, { useRef, useState } from 'react'
+//import Header from './Header'
+import { checkValidData } from '../utils/validate'
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile} from "firebase/auth";
+import { auth } from '../utils/firebase';
+import { useNavigate } from 'react-router-dom';
+import { addUser } from '../utils/userSlice';
+import { useDispatch } from 'react-redux';
 
-// create a schema for validation
-const schema = Yup.object().shape({
-  email: Yup.string()
-    .required("Email is a required field")
-    .email("Invalid email format"),
-  password: Yup.string()
-    .required("Password is a required field")
-    .min(8, "Password must be at least 8 characters"),
-});
 
 const Login = () => {
-  const navigate = useNavigate();
-
-  function handleNavigate(values) {
-    // Alert the input values of the form that we filled
-    alert(values);
-    // setTimeout for navigate from login page to home page
-    setTimeout(() => {
-      navigate("/");
-    }, 0);
+  const dispatch = useDispatch();
+  const[isSignInForm,setIsSignInForm] = useState(true)
+  const[errorMessage,setErrorMessage] = useState(null)
+  const name = useRef(null)
+  const email = useRef(null);
+  const password = useRef(null);
+  const navigate = useNavigate()
+  
+  const toggleSignInForm = ()=>{
+    setIsSignInForm(!isSignInForm)
   }
+
+  const handleButtonClick = ()=>{
+    //Form validation
+    const message = checkValidData(email.current.value,password.current.value) 
+    setErrorMessage(message)
+    if(message) return;
+
+    if(!isSignInForm){
+      // Signed up logic
+      createUserWithEmailAndPassword(
+        auth, 
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+         // Signed up 
+         const user = userCredential.user;
+         updateProfile(user, {
+          displayName: name.current.value,
+          }).then(() => {
+            // Profile updated and store will be set again!
+            const {uid,email,displayName} = auth.currentUser;
+            dispatch(
+              addUser(
+                {
+                  uid:uid,
+                  email:email,
+                  displayName:displayName
+                }
+              )
+            )
+            
+          }).catch((error) => {
+            // An error occurred
+            setErrorMessage(error.message)
+          })
+          .catch((error) => {
+           const errorCode = error.code;
+           const errorMessage = error.message;
+           setErrorMessage(errorCode +" - " + errorMessage)
+         
+          });
+        })
+
+     
+    }
+    else{
+      //sign in logic 
+      signInWithEmailAndPassword(auth,
+        email.current.value,
+        password.current.value
+      )
+      .then((userCredential) => {
+        const user = userCredential.user;  
+        navigate("/")
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setErrorMessage(errorCode + "-" + errorMessage)
+      });
+    }
+  }
+  
   return (
-    <>
-      {/* Wrapping form inside formik tag and passing our schema to validationSchema prop */}
-      <Formik
-        validationSchema={schema}
-        initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => {
-          // call handleNavigate and pass input filed data
-          handleNavigate(JSON.stringify(values));
-        }}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        }) => (
-          <div className="flex justify-center items-center h-[100vh] w-full">
-            <div className="relative z-10 bg-[#c6c1bd] rounded-[10px] max-w-[380px] px-[40px] py-[25px] w-[50%]">
-              {/* Passing handleSubmit parameter to html form onSubmit property */}
-              <form noValidate onSubmit={handleSubmit}>
-                <span className="text-[40px] text-[#4b6cb7] mb-[25px] block text-center font-[500px]">
-                  Login
-                </span>
-                {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
-                <input
-                  type="email"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  placeholder="Enter your email"
-                  className="outline-none bg-[#514f4f] w-full border-0 rounded-[5px] m-0 mb-[15px] p-[15px] text-[14px] "
-                />
-                {/* If validation is not passed show errors */}
-                <p className="mt-0 mr-0 mb-[10px] ml-[10px] text-left text-[13px] text-[red]">
-                  {errors.email && touched.email && errors.email}
-                </p>
-                {/* input with passing formik parameters like handleChange, values, handleBlur to input properties */}
-                <input
-                  type="password"
-                  name="password"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                  placeholder="Enter your password"
-                  className="outline-none bg-[#514f4f] w-full border-0 rounded-[5px] m-0 mb-[15px] p-[15px] text-[14px] focus:border-[blue-500]"
-                />
-                {/* If validation is not passed show errors */}
-                <p className="mt-0 mr-0 mb-[10px] ml-[10px] text-left text-[13px] text-[red]">
-                  {errors.password && touched.password && errors.password}
-                </p>
-                {/* Click on submit button to submit the form */}
-                <button
-                  className="uppercase outline-none bg-[#514f4f] text-[#FFF] text-[16px] cursor-pointer w-full 
-                  border-0 rounded-md py-[15px] px-[40px] active:bg-[#395591] hover:bg-[#5c5c6d] transition-all 0.3s ease-in-out"
-                  type="submit"
-                >
-                  Login
-                </button>
-              </form>
-            </div>
-          </div>
-        )}
-      </Formik>
-    </>
-  );
-};
+    <div>
+        <form onSubmit={(e)=>e.preventDefault()} className='w-3/12 mx-auto my-36 
+         bg-black rounded-lg p-12 right-0 left-0
+          text-white bg-opacity-80'>
+          <h1 className='font-bold text-3xl'>{isSignInForm ? 'Sign In' : 'Sign Up'}</h1>
+          {!isSignInForm && 
+          <input 
+           type="text" ref={name}
+           placeholder='Full Name' 
+           className='p-2 my-4 w-full bg-gray-700'
+          />
+          }
+          <input type="text" ref={email}
+           placeholder='Email Address' 
+           className='p-2 my-4 w-full bg-gray-700' 
+          />
+          <input type="text" ref={password} 
+           placeholder='Password'  
+           className='p-2 my-4 w-full bg-gray-700'
+          />
+          <p className='text-red-500 font-bold text-lg py-1'>{errorMessage}</p>
+          
+          <button 
+           className='p-2 my-4 bg-red-950 w-full rounded-lg'
+           onClick={handleButtonClick}
+           >{isSignInForm ? 'Sign In' : 'Sign Up'}
+          </button>
+
+          <p className='py-4 cursor-pointer' 
+           onClick={toggleSignInForm}>
+           {isSignInForm ? 'New To This? Sign up now' : 'Already Registered? Sign in now'}
+          </p>
+        </form>
+    </div>
+  )
+}
 
 export default Login;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
