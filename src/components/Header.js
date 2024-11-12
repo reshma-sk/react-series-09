@@ -62,8 +62,9 @@ const Header = ()=>{
                     Logout
                   </button>
                   <div>
-                    <p className="text-xl font-bold text-center bg-slate-600 rounded-full px-2 py-1  text-white">
-                      {user.displayName.slice(0, 1)}
+                    <p className="text-xl font-bold text-center bg-slate-600 rounded-full px-2 py-1  text-white"> 
+                      {user && user.displayName ? user.displayName.slice(0, 1) : "N/A"}
+
                     </p>
                     {isOnline ? (
                       <span className="bg-green-500 h-3 w-3 rounded-full absolute top-3  right-7"></span>
