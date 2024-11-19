@@ -62,9 +62,7 @@ const Login = () => {
            setErrorMessage(errorCode +" - " + errorMessage)
          
           });
-        })
-
-     
+        }) 
     }
     else{
       //sign in logic 

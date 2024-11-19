@@ -13,6 +13,7 @@ const Body = ()=>{
     const[showButton,setShowButton] = useState(true)
     const[searchRestaurant,setSearchRestaurant] = useState('')
     const[restaurantName,setRestaurantName] = useState('')
+    
     const[restaurantList,filteredRestaurants,setFilteredRestaurants] = useRestaurantData();
     const RestaurantCardWithDiscount = withDiscountOffer(RestaurantCard)
     const isOnline = useOnline();

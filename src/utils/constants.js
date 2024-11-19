@@ -1,6 +1,6 @@
 export const LOGO_URL = "https://png.pngtree.com/png-clipart/20220903/ourmid/pngtree-chef-restaurant-logo-png-image_6136204.png";
-//export const SWIGGY_API_URL = "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.2472528&lng=80.1514447&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+export const SWIGGY_API_URL = "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 export const MENU_URL = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.2472528&lng=80.1514447&restaurantId=";
 export const LNKDIN_URL = "https://www.linkedin.com/in/reshmask/";
 export const CONTACT_IMG = "https://wallpapers.com/images/hd/friendly-contact-us-sign-woman-p1ku6w18tswg9cwa.png";
@@ -9,4 +9,3 @@ export const ERR_IMG = "https://d33v4339jhl8k0.cloudfront.net/docs/assets/5dd511
 export const GITHUB_USER_API = "https://api.github.com/users/"
 export const GITHUB_USER_NAME = "reshma-sk";
 export const GITHUB_LINK = "https://github.com/reshma-sk";
-export const SWIGGY_API_URL="https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.2472528&lng=80.1514447&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
