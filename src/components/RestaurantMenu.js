@@ -8,7 +8,7 @@ import RestaurantMenuCategory from "./RestaurantMenuCategory";
 
 
 const RestaurantMenu = ()=>{
-  const[showIndex,setShowIndex] = useState(0)
+  const[showIndex,setShowIndex] = useState(null)
     const {resId} = useParams();
     console.log(resId);
     const restaurantInfo = useRestaurantMenuData(resId);

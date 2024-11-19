@@ -9,17 +9,14 @@ import { auth } from "../utils/firebase";
 
 const Header = ()=>{
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const isOnline = useOnline();
-
   const cartItems = useSelector((store)=>store.cart.items)
   const user = useSelector((store)=>store.user)  
 
   //subscribing to the store using a selector
   const handleSignOut = () => {
     signOut(auth)
-      .then(() => {
-        
+      .then(() => { 
       })
       .catch((error) => {
         navigate("/error");
@@ -53,7 +50,8 @@ const Header = ()=>{
 
             {/*<li className='m-3 hover:bg-orange-300'>{loggedInUser}</li>*/}
             <li className="m-3">
-              {user && (
+              <Link to="/login">
+              {user ? (
                 <div className='flex'>
                   <button
                     className="m-3 bg-gray-700 text-white px-3 py-1 rounded-md"
@@ -73,7 +71,9 @@ const Header = ()=>{
                     )}
                   </div>
                 </div>
-              )}
+              ):'Login'}
+              </Link>
+              
             </li>
           </ul>
         </div>
