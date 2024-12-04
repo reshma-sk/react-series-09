@@ -2,11 +2,11 @@
 import { CDN_URL } from "../utils/constants";
 import { MdStarRate } from "react-icons/md";
 import { Link } from "react-router-dom";
-//import UserContext from "../utils/UserContext";
+
 
 const RestaurantCard = ({id,name,cloudinaryImageId,avgRatingString,sla,cuisines})=>{
      
-    //const {loggedInUser} = useContext(UserContext)
+    
     return(
         <Link to={"restaurants/" + id }>
             <div className="flex flex-col flex-wrap w-64 mx-2 my-4 h-96 p-4 shadow-xl rounded-lg hover:bg-gray-400">

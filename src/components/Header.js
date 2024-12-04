@@ -3,9 +3,8 @@ import { auth } from "../utils/firebase";
 import { LOGO_URL } from "../utils/constants";
 import { Link,useNavigate} from "react-router-dom";
 import useOnline from '../hooks/useOnline';
-import {useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { signOut } from "firebase/auth";
-import { auth } from "../utils/firebase";
 
 const Header = ()=>{
   const navigate = useNavigate();
@@ -57,7 +56,7 @@ const Header = ()=>{
                     className="m-3 bg-gray-700 text-white px-3 py-1 rounded-md"
                     onClick={handleSignOut}
                   >
-                    Logout
+                    'Logout'
                   </button>
                   <div>
                     <p className="text-xl font-bold text-center bg-slate-600 rounded-full px-2 py-1  text-white"> 

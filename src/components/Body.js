@@ -38,16 +38,17 @@ const Body = ()=>{
 
     return restaurantList.length == 0 ? (<Shimmer/>) : 
         (
-            
             <div className='flex flex-col gap-8 justify-between items-center mt-3'>
                 
                 <div className='flex justify-between m-10'>
 
                     <div className='flex justify-between'>
-                        <input type="text"  className='w-96 rounded-3xl border border-slate-400 mx-10 px-4 py-4 h-12' placeholder='searchfor a restaurant' 
-                        value = {searchRestaurant} onChange={(e)=>{setSearchRestaurant(e.target.value)}}/> 
-                        <button onClick={searchByName} className="bg-blue-300 rounded-full px-3 font-bold">Search</button>  
-                          
+                        <input type="text"  
+                        className='w-96 rounded-3xl border border-slate-400 mx-10 px-4 py-4 h-12' 
+                        placeholder='search for a restaurant' 
+                        value = {searchRestaurant} 
+                        onChange={(e)=>{setSearchRestaurant(e.target.value)}}/> 
+                        <button onClick={searchByName} className="bg-blue-300 rounded-full px-3 font-bold">Search</button>        
                     </div>
                     
                     {showButton &&
@@ -83,4 +84,5 @@ const Body = ()=>{
      </div>
     </div>
 )}
+
 export default Body;

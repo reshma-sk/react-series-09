@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import ProfileClass from "./ProfileClass";
-import { BURGER_IMG, LOGO_URL } from "../utils/constants";
+import React from "react";
 import { LOGO_URL } from "../utils/constants";
 
 const About = () => {
-  const [showProfile, setShowProfile] = useState(false);
+ 
 
   return (
       <div className="flex justify-around items-center">
