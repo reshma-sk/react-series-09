@@ -1,49 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733312654945" clover="3.2.0">
-  <project timestamp="1733312654945" name="All files">
-    <metrics statements="25" coveredstatements="20" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="3" elements="35" coveredelements="24" complexity="0" loc="25" ncloc="25" packages="2" files="4" classes="4"/>
-    <package name="components">
-      <metrics statements="14" coveredstatements="9" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="3"/>
-      <file name="About.js" path="C:\09-episode\src\components\About.js">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-      </file>
-      <file name="Contact.js" path="C:\09-episode\src\components\Contact.js">
-        <metrics statements="6" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-      </file>
-      <file name="RestaurantCard.js" path="C:\09-episode\src\components\RestaurantCard.js">
-        <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="utils">
-      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="constants.js" path="C:\09-episode\src\utils\constants.js">
-        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1733351895905" clover="3.2.0">
+  <project timestamp="1733351895905" name="All files">
+    <metrics statements="28" coveredstatements="24" conditionals="12" coveredconditionals="10" methods="10" coveredmethods="8" elements="50" coveredelements="42" complexity="0" loc="28" ncloc="28" packages="1" files="2" classes="2"/>
+    <file name="Body.js" path="C:\09-episode\src\components\Body.js">
+      <metrics statements="22" coveredstatements="18" conditionals="10" coveredconditionals="8" methods="7" coveredmethods="5"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="4" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="11" count="4" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="14" count="4" type="stmt"/>
+      <line num="15" count="4" type="stmt"/>
+      <line num="16" count="4" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="22" count="4" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="24" count="20" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="30" count="4" type="cond" truecount="1" falsecount="1"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="34" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="47" count="1" type="stmt"/>
+      <line num="78" count="44" type="stmt"/>
+    </file>
+    <file name="RestaurantCard.js" path="C:\09-episode\src\components\RestaurantCard.js">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="14" count="46" type="stmt"/>
+      <line num="35" count="2" type="stmt"/>
+      <line num="36" count="5" type="stmt"/>
+      <line num="37" count="35" type="stmt"/>
+      <line num="38" count="35" type="stmt"/>
+    </file>
   </project>
 </coverage>
