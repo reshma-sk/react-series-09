@@ -25,7 +25,7 @@ it("should load Header component with login button",()=>{
         </Provider>
         </BrowserRouter>
     )
-    const logoutItem = screen.getByText('Logout');
+    const logoutItem = screen.getByTestId('logoutbtn');
     expect(logoutItem).toBeInTheDocument();
 });*/
 
@@ -63,6 +63,8 @@ it("should load Header component with a Cart item",()=>{
     );
     const loginButton = screen.getByText('Login')
     fireEvent.click(loginButton);
-    const logoutButton = screen.getByRole('list',{name:'Logout'})
+    const logoutButton = screen.getByRole('button',{name:'Logout'})
+    console.log(logoutButton);
+    
     expect(logoutButton).toBeInTheDocument();
 })*/

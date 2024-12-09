@@ -13,21 +13,22 @@ const RItemList = ({items})=>{
     return(
         <div className="shadow-lg">
             {items.map((item)=>(
-                <div key={item.card.info.id} className="w-50 flex justify-between p-2 my-2 shadow-md border-black border-b-2">
-                    <div>
+                <div key={item.card.info.id} className="md:w-full w-60  flex flex-col md:flex-row md:justify-between p-2 my-2 shadow-lg md:shadow-md border-black border-b-2">
+                    <div className="w-[70%] mt-1">
                         <span className="font-semibold text-lg">{item.card.info.name} :</span>
                         <span className="font-semibold"> ₹{item.card.info.price/100 || item.card.info.defaultPrice/100}</span>
                         <p className="m-4">{item.card.info.description}</p>
-                        <button className="w-50% text-black-100 bg-gray-500 font-semibold rounded-md text-[1rem] px-[10px] py-[5px] 
-                        cursor-pointer border-none relative ml-[300px] bottom-[15px] hover:bg-gray-300 hover:text-green-800 transition-all 0.3s"
-                        onClick={()=>handleAddCart(item)}>Add to cart
-                        </button>
+                        
                     </div>
-                    <div className="flex flex-col items-center justify-center">
+                    <div className="w-[15%] shadow-lg border "> 
                         <img className="w-[150px] h-[100px] object-cover rounded-[8px]" 
                         src={CDN_URL + item.card.info.imageId}
                         alt={item.card.info.name}
                         />
+                        <button className="w-[50px] text-black-100 bg-gray-500 font-semibold rounded-md text-md px-3 py-1
+                        cursor-pointer border-none relative ml-[20px] -top-[6.5rem] hover:bg-gray-300 hover:text-green-800 transition-all 0.3s"
+                        onClick={()=>handleAddCart(item)}>Add 
+                        </button>
                     </div>
                 </div>
             ))}

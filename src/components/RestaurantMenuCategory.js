@@ -15,7 +15,7 @@ const RestaurantMenuCategory = ({data,showItems,setShowIndex})=>{
       <div className="w-full shadow-md px-[20px] bg-gray-50 rounded-md py-[10px] my-[30px]">
         {/* Category Header */}
         <div
-          className="flex justify-between items-center text-xl font-extrabold cursor-pointer"
+          className="flex justify-between items-center text-md md:text-xl font-extrabold cursor-pointer"
           onClick={handleClick}
         >
           <span>{`${data?.title.slice(0, 40)} (${
