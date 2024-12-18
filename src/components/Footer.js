@@ -7,7 +7,7 @@ const Footer = ()=>{
             <a href={LNKDIN_URL}>Reshma Shaik </a>
             <span>&copy; </span>
             <strong>
-                Spoons & <span>Forks</span>
+                Foodie <span> Go </span>
             </strong>
         </div>
     )

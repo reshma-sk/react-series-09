@@ -38,6 +38,7 @@ const Header = ()=>{
             <li className="px-1 py-1 text-center md:m-3  md:px-3 md:py-1 rounded-md hover:bg-orange-300">
               <Link to="/About">About</Link>
             </li>
+            
             <li className="px-1 py-1 text-center md:m-3 md:px-3 md:py-1 rounded-md hover:bg-orange-300">
               <Link to="/contact">Contact Us</Link>
             </li>

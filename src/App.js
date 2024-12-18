@@ -12,14 +12,13 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Cart from "./components/Cart";
-//import Body from "./components/Body";
+import Grocery from "./components/Grocery";
 import appStore from "./utils/appStore";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import Login from './components/Login';
 import {onAuthStateChanged} from 'firebase/auth';
 import { auth } from "./utils/firebase";
 import { addUser,removeUser } from "./utils/userSlice"
-
 
 const About = lazy(() => import("./components/About"));
 const Body = lazy(()=> import("./components/Body"));
@@ -84,8 +83,10 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      
-      
+      {
+        path: "/grocery",
+        element: <Grocery />,
+      },
       {
         path: "/cart",
         element: <Cart />,
