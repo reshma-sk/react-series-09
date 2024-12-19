@@ -1,7 +1,7 @@
 //import React, { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
-import { MdStarRate } from "react-icons/md";
-import { Link } from "react-router-dom";
+
+
 
 const RestaurantCard = ({
   id,
@@ -22,11 +22,10 @@ const RestaurantCard = ({
         className="w-64 h-48 shadow-sm rounded-md mx-auto"
       />
       <div>
-        <h3 className="font-bold">{name}</h3>
-        <span>
-          <MdStarRate />
-          {avgRatingString}
-        </span>
+        <h3 className="font-bold">
+          {name.length > 24 ? name.slice(0, 21) + "..." : name.slice(0, 24)}
+        </h3>
+        <span>{avgRatingString}</span>
         <p>{sla.deliveryTime}mins</p>
         <span>Cuisines: {cuisines.join(", ")}</span>
       </div>
